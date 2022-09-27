@@ -25,7 +25,7 @@ pipeline {
                 stage('Building image') {
                     steps {
 //                          sh "sudo docker build -t myubuntuimage:version1 ."
-                          sh "sudo az acr build --image aksdemo/restapi:${app_tag}   --registry dhltestcluster   --file Dockerfile ."
+                          sh "sudo az acr build --image aksdemo:v1 --registry cluster12reistry --file Dockerfile ."
                           sh "echo docker"
                     }
                 }

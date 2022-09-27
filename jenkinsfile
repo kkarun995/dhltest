@@ -5,7 +5,7 @@ pipeline {
             stages {
                 stage('Authentication') {
                     steps {
-                        sh 'az login -- identity'
+                        sh 'az login --identity'
                     }
                 }
                 // stage('SonarQube Analysis'){

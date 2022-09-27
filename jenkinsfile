@@ -3,11 +3,11 @@ def app_tag = "app.1.$BUILD_NUMBER"
 pipeline {
     agent any
             stages {
-                // stage('Build') {
-                //     steps {
-                //         sh 'npm install'
-                //     }
-                // }
+                stage('Authentication') {
+                    steps {
+                        sh 'az login -- identity'
+                    }
+                }
                 // stage('SonarQube Analysis'){
                 //   // environment {     
                 //     // SCANNER_HOME = tool 'SonarQubeScanner'

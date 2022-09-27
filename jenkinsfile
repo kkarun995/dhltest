@@ -31,8 +31,8 @@ pipeline {
                 }
                 stage('AKS Deployment') {
                     steps {
-                        checkout([$class: 'GitSCM', branches: [[name: '*/main']], userRemoteConfigs: [[credentialsId: '6fa0293f-d3e1-4249-9c6e-8abc5fd48bb7', url: 'https://github.com/vidya-udayakumar123/helm_charts.git']]])
-//                        sh "helm package ./nodejs-api-chart/"
+                        // checkout([$class: 'GitSCM', branches: [[name: '*/main']], userRemoteConfigs: [[credentialsId: '6fa0293f-d3e1-4249-9c6e-8abc5fd48bb7', url: 'https://github.com/vidya-udayakumar123/helm_charts.git']]])
+                        sh "helm package ./nodejs-api-chart/"
                         sh "helm install api-release nodehs-api-chart-0.1.0.tgz -n exp-ndat-go2-dev1"
                         sh "kubectl get pods -n exp-ndat-go2-dev1"            
                     }

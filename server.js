@@ -10,7 +10,7 @@ app.get('/', function (req, res) {
 });
 
 app.get('/api', function (req, res) {
-    res.send('Hello from webfrontend');
+    res.send('DHL Node js pipeline');
 });
 
 var port = process.env.PORT || 80;
